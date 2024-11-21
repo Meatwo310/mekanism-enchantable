@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "io.github.meatwo310.mekanism_enchantable.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ItemMekaToolMixin",
+    "ItemMixin"
+  ]
+}
