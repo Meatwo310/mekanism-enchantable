@@ -157,6 +157,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}")
+    runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")
     runtimeOnly fg.deobf("curse.maven:jei-238222:5846810")
     runtimeOnly fg.deobf("curse.maven:jei-integration-265917:4999754")
     runtimeOnly fg.deobf("curse.maven:configured-457570:5180900")
