@@ -5,6 +5,7 @@
   "mixins": [
     "ItemMixin",
     "armor.BaseSpecialArmorMaterialMixin",
+    "armor.ItemHazmatSuitArmorMixin",
     "armor.ItemSpecialArmorMixin",
     "tool.ItemMekaItemMixin"
   ]
