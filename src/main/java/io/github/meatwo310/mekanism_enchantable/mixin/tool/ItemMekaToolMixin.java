@@ -20,9 +20,9 @@ import java.util.EnumSet;
 import java.util.Set;
 
 @Mixin(value = ItemMekaTool.class, remap = false)
-public class ItemMekaItemMixin extends ItemMixin implements IEnchantableItem {
+public class ItemMekaToolMixin extends ItemMixin implements IEnchantableItem {
     @Unique
-    private static final Set<EnchantmentCategory> enchantable_mekatools$CATEGORIES = Collections.unmodifiableSet(EnumSet.of(
+    private static final Set<EnchantmentCategory> enchantable_mekatools$ALLOWED = Collections.unmodifiableSet(EnumSet.of(
             //            EnchantmentCategory.BREAKABLE, // TODO: Support this category
             EnchantmentCategory.DIGGER,
             EnchantmentCategory.WEAPON
@@ -30,6 +30,7 @@ public class ItemMekaItemMixin extends ItemMixin implements IEnchantableItem {
 
     @Unique
     private static final Set<Enchantment> enchantable_mekatools$DENIED = Set.of(
+            Enchantments.SWEEPING_EDGE,
             Enchantments.SILK_TOUCH
     );
 
@@ -50,10 +51,12 @@ public class ItemMekaItemMixin extends ItemMixin implements IEnchantableItem {
     @Inject(method = IEnchantableItem.CAN_APPLY_AT_ENCHANTING_TABLE, at = @At("HEAD"), cancellable = true)
     public void canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment, CallbackInfoReturnable<Boolean> cir) {
         if (!CommonConfig.MEKATOOL_ENCHANTABLE.get()) return;
-        cir.setReturnValue(CommonConfig.MEKATOOL_ALLOW_ALL_ENCHANTMENTS.get() ||
-                (enchantable_mekatools$CATEGORIES.contains(enchantment.category) &&
-                        !enchantable_mekatools$DENIED.contains(enchantment))
-        );
+        if (CommonConfig.MEKATOOL_ALLOW_ALL_ENCHANTMENTS.get())
+            cir.setReturnValue(true);
+
+        if (!enchantable_mekatools$ALLOWED.contains(enchantment.category)) return;
+        if (enchantable_mekatools$DENIED.contains(enchantment)) return;
+        cir.setReturnValue(true);
     }
 
     @Override
