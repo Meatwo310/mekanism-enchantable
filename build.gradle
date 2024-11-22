@@ -164,6 +164,7 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:catalogue-459701:4766090")
     runtimeOnly fg.deobf("curse.maven:emi-580555:5872526")
     runtimeOnly fg.deobf("curse.maven:emienchants-1036393:5425207")
+    runtimeOnly fg.deobf("curse.maven:mmmmmmmmmmmm-225738:5737040")
 
     // Apply Mixin AP
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
