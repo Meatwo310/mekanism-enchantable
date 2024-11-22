@@ -6,6 +6,6 @@
     "ItemMixin",
     "armor.BaseSpecialArmorMaterialMixin",
     "armor.ItemSpecialArmorMixin",
-    "tool.ItemMekaToolMixin"
+    "tool.ItemMekaItemMixin"
   ]
 }
