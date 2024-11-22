@@ -17,7 +17,7 @@ public class CommonConfig {
             .defineInRange("mekaToolEnchantability", 15, 1, Integer.MAX_VALUE);
 
     public static final ForgeConfigSpec.BooleanValue MEKATOOL_ALLOW_ALL_ENCHANTMENTS = BUILDER
-            .comment("Whether to allow ALL enchantments on Meka-Tool. Set false to limit to tools enchantments")
+            .comment("Whether to allow ALL enchantments on Meka-Tool. Set false to limit to tools and weapons enchantments")
             .define("mekaToolAllowAllEnchantments", false);
 
     public static final ForgeConfigSpec.BooleanValue MEKASUIT_ENCHANTABLE = BUILDER
