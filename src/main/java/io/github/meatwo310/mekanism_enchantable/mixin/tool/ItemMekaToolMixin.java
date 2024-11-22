@@ -1,5 +1,6 @@
 package io.github.meatwo310.mekanism_enchantable.mixin.tool;
 
+import io.github.meatwo310.mekanism_enchantable.api.IEnchantableTool;
 import io.github.meatwo310.mekanism_enchantable.config.CommonConfig;
 import io.github.meatwo310.mekanism_enchantable.mixin.ItemMixin;
 import mekanism.common.item.gear.ItemMekaTool;
