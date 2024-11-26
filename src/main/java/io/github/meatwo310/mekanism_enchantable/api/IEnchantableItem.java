@@ -3,8 +3,13 @@ package io.github.meatwo310.mekanism_enchantable.api;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import org.jetbrains.annotations.NotNull;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+/**
+ * Interface for items that want to be enchantable.
+ * Implement this interface with cancellable {@link Inject} mixins to adjust enchanting behavior.
+ */
 @SuppressWarnings("unused")
 public interface IEnchantableItem {
     String IS_ENCHANTABLE = "isEnchantable(Lnet/minecraft/world/item/ItemStack;)Z";
