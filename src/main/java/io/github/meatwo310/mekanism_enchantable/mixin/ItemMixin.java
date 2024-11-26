@@ -10,10 +10,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Item.class)
 public abstract class ItemMixin {
     /**
-     * This method forces the return value of {@link Item#getEnchantmentValue()}.
-     * Classes that extend this class should override this method to change the return value.
-     * @param cir Callback info returnable
+     * Empty method to override enchantment value by other mixins that extend this class.
+     * @param cir Callback info returnable to set the enchantment value
      */
     @Inject(method = "getEnchantmentValue()I", at = @At("HEAD"), cancellable = true)
     protected void getEnchantmentValue(CallbackInfoReturnable<Integer> cir) {}
+
+    /**
+     * Empty method to override enchantability by other mixins that extend this class.
+     * @param cir Callback info returnable to set if the item is enchantable
+     */
+    @Inject(method = "isEnchantable(Lnet/minecraft/world/item/ItemStack;)Z", at = @At("HEAD"), cancellable = true)
+    protected void isEnchantable(CallbackInfoReturnable<Boolean> cir) {}
 }

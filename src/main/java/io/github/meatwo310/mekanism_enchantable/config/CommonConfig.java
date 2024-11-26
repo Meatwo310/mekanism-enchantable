@@ -30,6 +30,15 @@ public class CommonConfig {
             .comment("Whether to allow ALL enchantments on Atomic Disassembler. Set false to limit to tools and weapons enchantments")
             .define("atomicDisassemblerAllowAllEnchantments", false);
 
+    // Electric Bow
+    public static final ForgeConfigSpec.BooleanValue ELECTRIC_BOW_ENCHANTABLE = BUILDER
+            .comment("Whether to allow enchanting of Electric Bow in Enchanting Table")
+            .define("electricBowEnchantable", true);
+    public static final ForgeConfigSpec.IntValue ELECTRIC_BOW_ENCHANTABILITY = BUILDER
+            .comment("Enchantability of Electric Bow. Higher values mean better enchantments")
+            .defineInRange("electricBowEnchantability", 15, 1, Integer.MAX_VALUE);
+
+
     // Armor
     public static final ForgeConfigSpec.BooleanValue ARMOR_ENCHANTABLE = BUILDER
             .comment("Whether to allow enchanting of armors, such as Meka-Suit, (Armored) Jetpack, (Armored) Free Runners, etc.")

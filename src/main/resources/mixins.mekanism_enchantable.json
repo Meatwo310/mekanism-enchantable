@@ -8,6 +8,7 @@
     "armor.ItemHazmatSuitArmorMixin",
     "armor.ItemSpecialArmorMixin",
     "tool.ItemAtomicDisassemblerMixin",
+    "tool.ItemElectricBowMixin",
     "tool.ItemMekaToolMixin"
   ]
 }
