@@ -2,7 +2,7 @@ package io.github.meatwo310.mekanism_enchantable.mixin.tool;
 
 import io.github.meatwo310.mekanism_enchantable.MEMixinUtil;
 import io.github.meatwo310.mekanism_enchantable.api.IEnchantableItem;
-import io.github.meatwo310.mekanism_enchantable.config.CommonConfig;
+import io.github.meatwo310.mekanism_enchantable.config.ServerConfig;
 import io.github.meatwo310.mekanism_enchantable.mixin.ItemMixin;
 import mekanism.common.item.gear.ItemMekaTool;
 import net.minecraft.world.item.ItemStack;
@@ -18,7 +18,7 @@ public class ItemMekaToolMixin extends ItemMixin implements IEnchantableItem {
     @Override
     @Inject(method = "isEnchantable", at = @At("HEAD"), cancellable = true)
     public void isEnchantable(@NotNull ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (!CommonConfig.MEKATOOL_ENCHANTABLE.get()) return;
+        if (!ServerConfig.MEKATOOL_ENCHANTABLE.get()) return;
         cir.setReturnValue(true);
     }
 
@@ -31,8 +31,8 @@ public class ItemMekaToolMixin extends ItemMixin implements IEnchantableItem {
     @Override
     @Inject(method = "canApplyAtEnchantingTable", at = @At("HEAD"), cancellable = true)
     public void canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment, CallbackInfoReturnable<Boolean> cir) {
-        if (!CommonConfig.MEKATOOL_ENCHANTABLE.get()) return;
-        if (CommonConfig.MEKATOOL_ALLOW_ALL_ENCHANTMENTS.get())
+        if (!ServerConfig.MEKATOOL_ENCHANTABLE.get()) return;
+        if (ServerConfig.MEKATOOL_ALLOW_ALL_ENCHANTMENTS.get())
             cir.setReturnValue(true);
 
         if (!MEMixinUtil.MEKA_TOOL_ALLOWED_CATEGORIES.contains(enchantment.category)) return;
@@ -42,7 +42,7 @@ public class ItemMekaToolMixin extends ItemMixin implements IEnchantableItem {
 
     @Override
     protected void getEnchantmentValue(CallbackInfoReturnable<Integer> cir) {
-        if (!CommonConfig.MEKATOOL_ENCHANTABLE.get()) return;
-        cir.setReturnValue(CommonConfig.MEKATOOL_ENCHANTABILITY.get());
+        if (!ServerConfig.MEKATOOL_ENCHANTABLE.get()) return;
+        cir.setReturnValue(ServerConfig.MEKATOOL_ENCHANTABILITY.get());
     }
 }

@@ -2,7 +2,7 @@ package io.github.meatwo310.mekanism_enchantable.mixin.tool;
 
 import io.github.meatwo310.mekanism_enchantable.MEMixinUtil;
 import io.github.meatwo310.mekanism_enchantable.api.IEnchantableItem;
-import io.github.meatwo310.mekanism_enchantable.config.CommonConfig;
+import io.github.meatwo310.mekanism_enchantable.config.ServerConfig;
 import io.github.meatwo310.mekanism_enchantable.mixin.ItemMixin;
 import mekanism.common.item.gear.ItemAtomicDisassembler;
 import net.minecraft.world.item.ItemStack;
@@ -18,7 +18,7 @@ public class ItemAtomicDisassemblerMixin extends ItemMixin implements IEnchantab
     @Override
     @Inject(method = "isEnchantable", at = @At("HEAD"), cancellable = true)
     public void isEnchantable(@NotNull ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (!CommonConfig.ATOMIC_DISASSEMBLER_ENCHANTABLE.get()) return;
+        if (!ServerConfig.ATOMIC_DISASSEMBLER_ENCHANTABLE.get()) return;
         cir.setReturnValue(true);
     }
 
@@ -31,8 +31,8 @@ public class ItemAtomicDisassemblerMixin extends ItemMixin implements IEnchantab
     @Override
     @Inject(method = "canApplyAtEnchantingTable", at = @At("HEAD"), cancellable = true)
     public void canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment, CallbackInfoReturnable<Boolean> cir) {
-        if (!CommonConfig.ATOMIC_DISASSEMBLER_ENCHANTABLE.get()) return;
-        if (CommonConfig.ATOMIC_DISASSEMBLER_ALLOW_ALL_ENCHANTMENTS.get())
+        if (!ServerConfig.ATOMIC_DISASSEMBLER_ENCHANTABLE.get()) return;
+        if (ServerConfig.ATOMIC_DISASSEMBLER_ALLOW_ALL_ENCHANTMENTS.get())
             cir.setReturnValue(true);
 
         if (!MEMixinUtil.ATOMIC_DISASSEMBLER_ALLOWED_CATEGORIES.contains(enchantment.category)) return;
@@ -42,7 +42,7 @@ public class ItemAtomicDisassemblerMixin extends ItemMixin implements IEnchantab
 
     @Override
     protected void getEnchantmentValue(CallbackInfoReturnable<Integer> cir) {
-        if (!CommonConfig.ATOMIC_DISASSEMBLER_ENCHANTABLE.get()) return;
-        cir.setReturnValue(CommonConfig.ATOMIC_DISASSEMBLER_ENCHANTABILITY.get());
+        if (!ServerConfig.ATOMIC_DISASSEMBLER_ENCHANTABLE.get()) return;
+        cir.setReturnValue(ServerConfig.ATOMIC_DISASSEMBLER_ENCHANTABILITY.get());
     }
 }
