@@ -1,7 +1,9 @@
 {
   "required": true,
+  "minVersion": "0.8",
   "package": "io.github.meatwo310.mekanism_enchantable.mixin",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "mekanism_enchantable.refmap.json",
   "mixins": [
     "ItemMixin",
     "armor.BaseSpecialArmorMaterialMixin",
@@ -10,5 +12,13 @@
     "tool.ItemAtomicDisassemblerMixin",
     "tool.ItemElectricBowMixin",
     "tool.ItemMekaToolMixin"
-  ]
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
 }
