@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = ItemSpecialArmor.class, remap = false)
 public class ItemSpecialArmorMixin {
-    @Inject(method = "isEnchantable(Lnet/minecraft/world/item/ItemStack;)Z", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "isEnchantable", at = @At("HEAD"), cancellable = true)
     private void isEnchantable(CallbackInfoReturnable<Boolean> cir) {
         if (!CommonConfig.ARMOR_ENCHANTABLE.get()) return;
         cir.setReturnValue(true);

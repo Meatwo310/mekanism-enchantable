@@ -34,20 +34,20 @@ public class ItemAtomicDisassemblerMixin extends ItemMixin implements IEnchantab
     );
 
     @Override
-    @Inject(method = IEnchantableItem.IS_ENCHANTABLE, at = @At("HEAD"), cancellable = true)
+    @Inject(method = "isEnchantable", at = @At("HEAD"), cancellable = true)
     public void isEnchantable(@NotNull ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (!CommonConfig.ATOMIC_DISASSEMBLER_ENCHANTABLE.get()) return;
         cir.setReturnValue(true);
     }
 
     @Override
-    @Inject(method = IEnchantableItem.IS_BOOK_ENCHANTABLE, at = @At("HEAD"), cancellable = true)
+    @Inject(method = "isBookEnchantable", at = @At("HEAD"), cancellable = true)
     public void isBookEnchantable(ItemStack stack, ItemStack book, CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(true);
     }
 
     @Override
-    @Inject(method = IEnchantableItem.CAN_APPLY_AT_ENCHANTING_TABLE, at = @At("HEAD"), cancellable = true)
+    @Inject(method = "canApplyAtEnchantingTable", at = @At("HEAD"), cancellable = true)
     public void canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment, CallbackInfoReturnable<Boolean> cir) {
         if (!CommonConfig.ATOMIC_DISASSEMBLER_ENCHANTABLE.get()) return;
         if (CommonConfig.ATOMIC_DISASSEMBLER_ALLOW_ALL_ENCHANTMENTS.get())
