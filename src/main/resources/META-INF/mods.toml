@@ -26,5 +26,5 @@ versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
-#[modproperties.${mod_id}]
-#catalogueImageIcon = "${mod_id}.png"
+[modproperties.${mod_id}]
+catalogueImageIcon = "${mod_id}.png"
