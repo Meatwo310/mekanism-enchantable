@@ -26,5 +26,12 @@ versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
+[[dependencies.${mod_id}]]
+modId = "mekanism"
+mandatory = true
+versionRange = "${mekanism_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
 [modproperties.${mod_id}]
 catalogueImageIcon = "${mod_id}.png"
