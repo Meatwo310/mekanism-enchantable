@@ -109,10 +109,10 @@ dependencies {
 
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}")
     runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")
-    runtimeOnly fg.deobf("curse.maven:emi-580555:5872526")
+    runtimeOnly fg.deobf("curse.maven:emi-580555:6420945")
     runtimeOnly fg.deobf("curse.maven:emienchants-1036393:5425207")
-    runtimeOnly fg.deobf("curse.maven:mmmmmmmmmmmm-225738:5737040")
-    runtimeOnly fg.deobf("curse.maven:selene-499980:5924202")
+    runtimeOnly fg.deobf("curse.maven:mmmmmmmmmmmm-225738:6860192")
+    runtimeOnly fg.deobf("curse.maven:selene-499980:7007554")
 }
 
 mixin {
