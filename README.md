@@ -18,4 +18,4 @@ Mekanism stuffs are now enchantable!
 ## Future Plan
 - Implement Unbreaking/Mending enchantment behaviour
 - Flamethrower support
-- ~~Enchantable Machines (!?)~~ Use [Mekanism Enchantable Machines by toapuro](https://www.curseforge.com/minecraft/mc-mods/mekanism-enchantable-machines)
+- ~~Enchantable Machines (!?)~~ Use Mekanism Enchantable Machines by toapuro ([CurseForge](https://www.curseforge.com/minecraft/mc-mods/mekanism-enchantable-machines) | [Modrinth](https://modrinth.com/mod/mekanism-enchantable-machines))
