@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = BaseSpecialArmorMaterial.class, remap = false)
-public abstract class BaseSpecialArmorMaterialMixin {
+public class BaseSpecialArmorMaterialMixin {
     @Inject(method = "getEnchantmentValue", at = @At("HEAD"), cancellable = true)
     private void getEnchantmentValue(CallbackInfoReturnable<Integer> cir) {
         if (!ServerConfig.ARMOR_ENCHANTABLE.get()) return;
