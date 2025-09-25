@@ -7,8 +7,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = ItemSpecialArmor.class, remap = false)
+@Mixin(value = ItemSpecialArmor.class)
 public class ItemSpecialArmorMixin {
+    // Minecraft's method so remap = true
     @Inject(method = "isEnchantable", at = @At("HEAD"), cancellable = true)
     private void isEnchantable(CallbackInfoReturnable<Boolean> cir) {
         if (!ServerConfig.ARMOR_ENCHANTABLE.get()) return;
